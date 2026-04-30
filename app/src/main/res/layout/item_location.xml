@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:contentDescription="Icono del clima"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtCity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/text_primary"
+            app:layout_constraintStart_toEndOf="@id/imgIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnDelete"
+            tools:text="Bogotá, CO" />
+
+        <TextView
+            android:id="@+id/txtTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/accent"
+            app:layout_constraintStart_toEndOf="@id/imgIcon"
+            app:layout_constraintTop_toBottomOf="@id/txtCity"
+            tools:text="18.5 °C" />
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintStart_toEndOf="@id/txtTemp"
+            app:layout_constraintBaseline_toBaselineOf="@id/txtTemp"
+            tools:text="Cielo despejado" />
+
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_delete"
+            android:contentDescription="Eliminar"
+            app:tint="@color/text_secondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/text_tertiary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgIcon"
+            tools:text="Humedad: 70%" />
+
+        <TextView
+            android:id="@+id/txtWind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/text_tertiary"
+            app:layout_constraintStart_toEndOf="@id/txtHumidity"
+            app:layout_constraintBaseline_toBaselineOf="@id/txtHumidity"
+            tools:text="Viento: 3.5 m/s" />
+
+        <TextView
+            android:id="@+id/txtUpdated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textStyle="italic"
+            android:textColor="@color/text_tertiary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/txtHumidity"
+            tools:text="Actualizado: 29/04 14:30" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
